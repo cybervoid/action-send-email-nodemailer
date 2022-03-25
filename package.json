@@ -1,0 +1,13 @@
+{
+    "name": "action-send-email-nodemailer",
+    "version": "1.0.0",
+    "description": "Send email",
+    "main": "index.js",
+    "repository": "git@github.com:cybervoid/action-send-email-nodemailer.git",
+    "author": "Rafael Gil <rafaelgil83@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@aws-sdk/client-ses": "^3.56.0",
+        "nodemailer": "^6.7.3"
+    }
+}
