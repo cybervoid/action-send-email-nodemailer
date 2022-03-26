@@ -3,7 +3,6 @@
 let nodemailer = require("nodemailer");
 let aws = require("@aws-sdk/client-ses");
 
-
 async function main() {
     const ses = new aws.SES({
         apiVersion: "2010-12-01",
@@ -15,11 +14,11 @@ async function main() {
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-        from: `"Fred Foo 👻" <${process.env.FROM}>`,
-        to: process.env.TO, // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
+        from: process.env.FROM,
+        to: process.env.TO,
+        subject: process.env.SUBJECT,
+        text: process.env.BODY,
+        html: process.env.BODY,
     });
 
     console.log("Message sent: %s", info.messageId);
