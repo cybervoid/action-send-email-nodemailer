@@ -1,0 +1,30 @@
+name: 'Send Email'
+description: 'A GitHub Action to send an email to multiple recipients'
+inputs:
+  to:
+    description: 'Receivers'
+    required: true
+  from:
+    description: 'Sender'
+    required: true
+  subject:
+    description: 'Email Subject'
+    required: true
+  body:
+    description: 'Email Body'
+    required: true
+  aws_access_key_id:
+    description: 'AWS_ACCESS_KEY_ID'
+    required: false
+  aws_secret_access_key:
+    description: 'AWS_SECRET_ACCESS_KEY'
+    required: false
+
+
+
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'index.js'

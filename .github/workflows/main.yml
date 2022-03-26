@@ -1,0 +1,22 @@
+on: [ push ]
+
+jobs:
+  test_send_email:
+    runs-on: ubuntu-latest
+    name: Send Email from Github Actions
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Send email
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+        uses: ./
+        id: found
+        with:
+          phone: ${{ secrets.TWILLIO_PHONE_NUMBER }}
+          text: 'Node'
+
+      - name: Was the message found
+        run: echo "Was the object found? ${{ steps.found.outputs.found }}"
