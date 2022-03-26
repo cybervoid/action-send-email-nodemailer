@@ -20,11 +20,9 @@ inputs:
     description: 'AWS_SECRET_ACCESS_KEY'
     required: false
 
-
-
 outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'
