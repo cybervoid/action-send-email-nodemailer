@@ -21,4 +21,4 @@ jobs:
           body: 'this is the body'
 
       - name: Was the email sent
-        run: echo "Was the email sent? ${{ steps.found.outputs.message }}"
+        run: echo "Was the email sent? ${{ steps.message.outputs.message }}"
