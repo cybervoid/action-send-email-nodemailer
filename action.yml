@@ -1,4 +1,4 @@
-name: 'Send Email'
+name: 'Send Email Nodemailer'
 description: 'A GitHub Action to send an email to multiple recipients'
 inputs:
   to:
