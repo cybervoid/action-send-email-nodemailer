@@ -21,8 +21,8 @@ inputs:
     required: false
 
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  message:
+    description: 'Return message confirmation'
 runs:
   using: 'node16'
   main: 'dist/index.js'

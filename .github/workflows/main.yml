@@ -10,13 +10,15 @@ jobs:
 
       - name: Send email
         env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         uses: ./
-        id: found
+        id: message
         with:
-          phone: ${{ secrets.TWILLIO_PHONE_NUMBER }}
-          text: 'Node'
+          to: 'rgil@rectanglehealth.com'
+          from: 'FROM="PMB bot" <PMB-WEB-DEV@rectanglehealth.com>'
+          subject: 'this is the subject'
+          body: 'this is the body'
 
-      - name: Was the message found
-        run: echo "Was the object found? ${{ steps.found.outputs.found }}"
+      - name: Was the email sent
+        run: echo "Was the email sent? ${{ steps.found.outputs.message }}"

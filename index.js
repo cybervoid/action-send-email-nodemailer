@@ -36,6 +36,7 @@ async function main() {
     });
 
     console.log("Message sent: %s", info.messageId);
+    core.setOutput("message", info);
 
     // Preview only available when sending through an Ethereal account
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
