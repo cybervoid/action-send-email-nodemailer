@@ -16,7 +16,7 @@ jobs:
         id: message
         with:
           to: 'rgil@rectanglehealth.com'
-          from: 'FROM="PMB bot" <PMB-WEB-DEV@rectanglehealth.com>'
+          from: '"PMB bot" <PMB-WEB-DEV@rectanglehealth.com>'
           subject: 'this is the subject'
           body: 'this is the body'
 
